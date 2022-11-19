@@ -1,0 +1,99 @@
+#event-table
+  display: flex
+  @media (max-width : 1345px)
+    display: none
+
+.event-table__day
+  width: 25%
+  background-color: #E5E5E5
+  border-radius: 20px
+  margin: 0 4px
+  &::first-child
+    margin-left: 0
+  &::last-child
+    margin-right: 0
+  header
+    padding: 12px 24px
+    border-radius: 20px
+    padding-top: 12px
+    padding-bottom: 12px
+    font-size: 14px
+
+.event-item
+  position: relative
+  padding: 24px
+  background-color: #fff
+  margin-bottom: 2px
+  min-height: 274px
+  height: auto
+  &:last-child
+    margin-bottom: 0
+    border-radius: 0 0 20px 20px
+
+.event-item__time_status_diabled
+  color: #E5E5E5
+
+.event-item__time, .event-item__title
+  font-size: 16px
+  font-weight: 800
+  sup
+    margin-left: 4px
+    font-size: 11px
+    vertical-align: -2px
+
+.event-item__live
+  color: #FF0011
+  font-size: 11px
+  text-align: right
+  position: relative
+  float: right
+  &::before
+    content: ''
+    display: inline-block
+    width: 11px
+    height: 11px
+    background-color: #FF0011
+    border-radius: 100%
+    vertical-align: -1px
+
+.event-item__location
+  color: $accent
+  font-style: italic
+  font-size: 11px
+  margin: 8px 0
+  cursor: pointer
+
+.event-item__info
+  font-size: 13px
+  margin-bottom: 22px
+
+.event-item__add-btn
+  position: absolute
+  right: 24px
+  bottom: 24px
+  
+
+.event-table__day_type_special
+  background-color: #FFEE00
+  height: 100%
+  header
+    font-weight: 800
+  .event-item__info
+    margin-bottom: 20px
+
+.event-item__title
+  margin-bottom: 8px
+
+.event-item_type_special
+  height: 100%
+  min-height: 548px
+
+.system-login
+  text-align: center
+  white-space: nowrap
+  font-size: 14px
+  font-weight: 800
+  background-color: #FFEE00
+  padding: 9px 21px
+  border-radius: 33px
+  cursor: pointer
