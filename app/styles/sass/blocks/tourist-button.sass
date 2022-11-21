@@ -1,7 +1,7 @@
 .tourist-button
   border-radius: 46px
   padding: 0
-  span
+  span:first-child
     padding: 10.5px
     margin: 0 auto
     line-height: 125%
@@ -27,6 +27,7 @@
       border-left: 1px solid #fff
 
 .tourist-button__img
+  display: block
   background-image: url(../images/dist/add-white.svg)
   background-repeat: no-repeat
   background-position: center
@@ -43,9 +44,9 @@
 
 
 .tourist-button[enabled], .tourist-button[enabled] .tourist-button__img
-  background-color: #F0F0F0
-  border-color: #C0C0C0
-  color: #888899
+  background-color: $light-bg
+  border-color: $btn-border-light
+  color: $btn-text-light
   span
     &::after
       content: 'Добавленно'
@@ -74,7 +75,7 @@
         background-size: 14px
 
 .tourist-button[archive]
-  span
+  span:first-child
     &::after
       content: 'Смотреть'
   .tourist-button__img

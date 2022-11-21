@@ -1,37 +1,46 @@
 #event-table
   display: flex
-  @media (max-width : 1345px)
+  display: grid
+  grid-template-columns: repeat(5, 1fr)
+  grid-template-rows: repeat(2, 1fr)
+  grid-auto-rows: minmax(274px, auto)
+  column-gap: 8px
+  @media (max-width : 1280px)
     display: none
 
-.event-table__day
-  width: 25%
-  background-color: #E5E5E5
-  border-radius: 20px
-  margin: 0 4px
-  &::first-child
-    margin-left: 0
-  &::last-child
-    margin-right: 0
+.event-table__field
+  display: flex
+  flex-direction: column
+  border-radius: 20px 20px 0 0
+  margin-bottom: 2px
   header
+    background-color: $dark-bg
     padding: 12px 24px
-    border-radius: 20px
+    border-radius: 20px 20px 0 0
     padding-top: 12px
     padding-bottom: 12px
     font-size: 14px
+  &:nth-child(2n)
+    grid-row: 2
+    margin-bottom: 0
+    order: 1
+    .event-item
+      border-radius: 0 0 20px 20px
 
 .event-item
-  position: relative
   padding: 24px
+  padding-bottom: auto
   background-color: #fff
-  margin-bottom: 2px
-  min-height: 274px
-  height: auto
+  height: 100%
+  display: flex
+  flex-direction: column
+
   &:last-child
     margin-bottom: 0
-    border-radius: 0 0 20px 20px
 
-.event-item__time_status_diabled
-  color: #E5E5E5
+
+.event-item__time_status_disabled
+  color: $dark-bg
 
 .event-item__time, .event-item__title
   font-size: 16px
@@ -42,7 +51,7 @@
     vertical-align: -2px
 
 .event-item__live
-  color: #FF0011
+  color: $live-color
   font-size: 11px
   text-align: right
   position: relative
@@ -52,11 +61,11 @@
     display: inline-block
     width: 11px
     height: 11px
-    background-color: #FF0011
+    background-color: $live-color
     border-radius: 100%
     vertical-align: -1px
 
-.event-item__location
+.event-item__company
   color: $accent
   font-style: italic
   font-size: 11px
@@ -68,16 +77,16 @@
   margin-bottom: 22px
 
 .event-item__add-btn
-  position: absolute
-  right: 24px
-  bottom: 24px
-  
+  margin-left: auto
+  margin-top: auto
 
-.event-table__day_type_special
-  background-color: #FFEE00
-  height: 100%
+.event-table__field_type_special
+  grid-column: 4
+  grid-row: 1 / span 2
+
   header
     font-weight: 800
+    background-color: $event-color
   .event-item__info
     margin-bottom: 20px
 
@@ -85,15 +94,14 @@
   margin-bottom: 8px
 
 .event-item_type_special
-  height: 100%
-  min-height: 548px
+  border-radius: 0 0 20px 20px
 
 .system-login
   text-align: center
   white-space: nowrap
   font-size: 14px
   font-weight: 800
-  background-color: #FFEE00
+  background-color: $event-color
   padding: 9px 21px
   border-radius: 33px
   cursor: pointer
